@@ -1,0 +1,19 @@
+Dim Datumy = 
+
+GENERATE(
+    CALENDARAUTO(),
+    VAR Rok = YEAR([Date])
+    VAR Mesic = MONTH([Date])
+    Var Tyden = WEEKNUM([Date])
+    Var Den = DAY([Date])
+    Var Den_Tydne = WEEKDAY([Date],2)
+    Var Vikend = IF(Den_Tydne<6,false,true)
+    RETURN ROW(
+    "Rok",Rok,
+    "Mesic",Mesic,
+    "Tyden",Tyden,
+    "Den",Den,
+    "Den tydne",Den_Tydne,
+    "Vikend",vikend))
+    
+
